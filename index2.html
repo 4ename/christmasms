@@ -4,6 +4,7 @@
 <head>
 <body>
 <span></span>
+  <input type="number" id="o" value="0"></input></head>
 </body>
 <script>
 setInterval(function(){c=((((86400000*((365)*49)+86400000+86400000+86400000+86400000+86400000+86400000)-68400000))-Date.now()).toString();document.body.children[0].innerHTML=c+" total milliseconds to Christmas 2018<br>"+Math.floor(c/(3600000*24)).toString()+" days "+new Date(parseInt(c)).getHours()+" hours "+new Date(parseInt(c)).getMinutes()+" minutes "+new Date(parseInt(c)).getSeconds()+" seconds "+new Date(parseInt(c)).getMilliseconds()+" milliseconds"
