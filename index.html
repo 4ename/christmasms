@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head><style>*{font-family:sans-serif;font-size:40px;font-weight:200;}</style>
-<head>
-<body>
+<!doctype html><html><head><style>*{font-family:sans-serif;font-size:40px;font-weight:200;}</style>
+
+</head><body>
 <span></span><br>
-  <input type="number" id="o" value="0"></input></head>
-</body>
+  <input style="font-size:15px;" type="number" id="o" value="-20"></input><span style="font-size:15px;">offset in sets of 15 minutes</span>
+
 <script>
-setInterval(function(){c=((((86400000*((365)*49)+86400000+86400000+86400000+86400000+86400000+86400000)-68400000)+(parseInt(document.getElementById("o").value)*3600000))-Date.now()).toString();
-document.body.children[0].innerHTML=c+" total milliseconds to Christmas 2018<br>"+Math.floor(parseInt(c)/(3600000*24)).toString()+
-" days "+new Date(parseInt(c)).getHours()+" hours "+
-new Date(parseInt(c)).getMinutes()+" minutes "+
-new Date(parseInt(c)).getSeconds()+" seconds "+
-new Date(parseInt(c)).getMilliseconds()+" milliseconds"},1)
+setInterval(function(){
+c=((((86400000*((365)*49)+86400000+86400000+86400000+86400000+86400000+86400000)-68400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now()).toString();
+document.body.children[0].innerHTML=c+
+" total milliseconds to Christmas 2018<br>"+
+Math.floor(new Date((c-(new Date(0).getTimezoneOffset()*60000))/86400000).getMilliseconds()).toString()+
+" days "+
+new Date(parseInt(c)).getHours()+
+" hours "+
+new Date(parseInt(c)).getMinutes()+
+" minutes "+
+new Date(parseInt(c)).getSeconds()+
+" seconds "+
+new Date(parseInt(c)).getMilliseconds()+
+" milliseconds"},1)
 </script>
-</html>
+
+</body></html>
