@@ -6,10 +6,10 @@
 
 <script>
 setInterval(function(){
-c=((((86400000*((365)*49)+86400000+86400000+86400000+86400000+86400000+86400000)-68400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now()).toString();
+c=(((((86400000*((365)*49)+86400000+86400000+86400000+86400000+86400000+86400000)-68400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now())+2000).toString();
 document.body.children[0].innerHTML=c+
 " total milliseconds to Christmas 2018<br>"+
-Math.floor(new Date((c-(new Date(0).getTimezoneOffset()*60000))/86400000).getMilliseconds()).toString()+
+Math.floor(new Date((parseInt(c)-(new Date(0).getTimezoneOffset()*60000))/86400000).getMilliseconds()).toString()+
 " days "+
 new Date(parseInt(c)).getHours()+
 " hours "+
@@ -22,3 +22,8 @@ new Date(parseInt(c)).getMilliseconds()+
 </script>
 
 </body></html>
+
+
+
+
+
