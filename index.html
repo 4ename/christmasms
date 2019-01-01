@@ -11,7 +11,7 @@
 setInterval(function(){
 c=((((parseInt(document.getElementById("d").value)*86400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now())).toString();
 document.body.children[0].innerHTML=c+
-" total milliseconds to "+'<span style="font-size:15px;">'+new Date(parseInt(c)+Date.now()+(parseInt(document.getElementById("o").value)*900000)).toString()+"</span><br>"+
+" total milliseconds to "+'<span style="font-size:15px;">'+new Date(parseInt(c)+Date.now()+(parseInt(document.getElementById("o").value)*450000)).toString()+"</span><br>"+
 Math.floor(new Date((parseInt(c)-(new Date(0).getTimezoneOffset()*60000))/86400000).getMilliseconds()).toString()+
 " days "+
 new Date(parseInt(c)).getHours()+
