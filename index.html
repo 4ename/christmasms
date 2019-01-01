@@ -3,12 +3,15 @@
 </head><body>
 <span></span><br>
   <input style="font-size:15px;" type="number" id="o" value="-20"></input><span style="font-size:15px;">offset in sets of 15 minutes</span>
-
+<br>
+<input style="font-size:15px;" type="number" id="d" value="17890"></input><span style="font-size:15px;">offset in sets of 15 minutes</span>
 <script>
+//1: EST default
+//2:Christmas 2018 default
 setInterval(function(){
-c=(((((86400000*((365)*49)+86400000+86400000+86400000+86400000+86400000+86400000)-68400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now())+2000).toString();
+c=((((parseInt(document.getElementById("d").value))-(parseInt(document.getElementById("o").value)*900000))-Date.now())+2000).toString();
 document.body.children[0].innerHTML=c+
-" total milliseconds to Christmas 2018<br>"+
+" total milliseconds to "+'<span style="font-size:15px;">'+new Date(c).toString()+"</span><br>"+
 Math.floor(new Date((parseInt(c)-(new Date(0).getTimezoneOffset()*60000))/86400000).getMilliseconds()).toString()+
 " days "+
 new Date(parseInt(c)).getHours()+
