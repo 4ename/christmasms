@@ -4,14 +4,14 @@
 <span></span><br>
   <input style="font-size:15px;" type="number" id="o" value="-40"></input><span style="font-size:15px;">offset in sets of 15 minutes</span>
 <br>
-<input style="font-size:15px;" type="number" id="d" value="17890"></input><span style="font-size:15px;">offset in sets of 15 minutes</span>
+<input style="font-size:15px;" type="number" id="d" value="17890"></input><span style="font-size:15px;">days since 1970 jan 1</span>
 <script>
 //1: EST default
 //2:Christmas 2018 default
 setInterval(function(){
-c=((((parseInt(document.getElementById("d").value)*86400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now())).toString();
+c=((((parseInt(document.getElementById("d").value)*86400000)-(parseInt(document.getElementById("o").value)*900000))-Date.now())+1000).toString();
 document.body.children[0].innerHTML=c+
-" total milliseconds to "+'<span style="font-size:15px;">'+new Date(parseInt(c)+Date.now()+(parseInt(document.getElementById("o").value)*450000)).toString()+"</span><br>"+
+" total milliseconds to "+'<span style="font-size:15px;">'+new Date(parseInt(c)+Date.now()+(parseInt(document.getElementById("o").value)*450000)-1000).toString()+"</span><br>"+
 Math.floor(new Date((parseInt(c)-(new Date(0).getTimezoneOffset()*60000))/86400000).getMilliseconds()).toString()+
 " days "+
 new Date(parseInt(c)).getHours()+
